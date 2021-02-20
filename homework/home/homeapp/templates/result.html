@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>result</title>
+  </head>
+
+  <body style="display: flex; justify-content: center; align-items: center">
+    <div style="width: 80%">
+      <img width="300px" height="300px" src= {% if score == 0 %}
+      "https://item.kakaocdn.net/do/437998cb670b87a9a8faca156155beeb15b3f4e3c2033bfd702a321ec6eda72c"
+      {% elif score == 1 %}
+      "https://item.kakaocdn.net/do/c9230634b95167d3f4c177bb02c9f73d82f3bd8c9735553d03f6f982e10ebe70"
+      {% else %}
+      "https://item.kakaocdn.net/do/a56e6ddd117688df80be93b1154a9856f43ad912ad8dd55b04db6a64cddaf76d"
+      {% endif %}/>
+      <br>
+      <h2>정답 개수 : {{score}}</h2>
+      <div>
+          <div>
+              <h2>정답 해설</h2>
+          </div>
+        {% if q1 %} 문제1 = O 
+        <br><br>
+        {% else %} 문제1 = X 
+        <br><br>
+        {% endif %}
+      </div>
+      <div>
+        {% if q2 %} 문제2 = O 
+        <br><br>
+        {% else %} 문제2 = X 
+        <br><br>
+        {% endif %}
+      </div>
+      <a href="/">다시 풀기</a>
+    </div>
+  </body>
+</html>
